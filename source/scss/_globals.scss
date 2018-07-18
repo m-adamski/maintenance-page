@@ -1,0 +1,10 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    @include set-font();
+    color: $color-black;
+    overflow-x: hidden;
+}

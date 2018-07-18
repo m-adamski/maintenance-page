@@ -1,0 +1,30 @@
+// Media Queries Breakpoints
+// Extra small screen / phone
+$var-screen-xs: 540px;
+$var-screen-xs-min: $var-screen-xs;
+$var-screen-phone: $var-screen-xs-min;
+
+// Small screen / tablet
+$var-screen-sm: 720px;
+$var-screen-sm-min: $var-screen-sm;
+$var-screen-tablet: $var-screen-sm-min;
+
+// Medium screen / desktop
+$var-screen-md: 992px;
+$var-screen-md-min: $var-screen-md;
+$var-screen-desktop: $var-screen-md-min;
+
+// Large screen
+$var-screen-lg: 960px;
+$var-screen-lg-min: $var-screen-lg;
+$var-screen-lg-desktop: $var-screen-lg-min;
+
+// XLarge screen / wide desktop
+$var-screen-xlg: 1140px;
+$var-screen-xlg-min: $var-screen-xlg;
+$var-screen-xlg-desktop: $var-screen-xlg-min;
+
+$var-screen-xs-max: ($var-screen-sm-min - 1);
+$var-screen-sm-max: ($var-screen-md-min - 1);
+$var-screen-md-max: ($var-screen-lg-min - 1);
+$var-screen-lg-max: ($var-screen-xlg-min - 1);
