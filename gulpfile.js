@@ -4,6 +4,7 @@ var sassLint = require("gulp-sass-lint");
 var sourceMaps = require("gulp-sourcemaps");
 var cleanCSS = require("gulp-clean-css");
 var rename = require("gulp-rename");
+var browserSync = require("browser-sync").create();
 
 function lintSass() {
     return gulp.src("./source/scss/**/*.scss")
@@ -24,9 +25,20 @@ function compileCss() {
         .pipe(cleanCSS())
         .pipe(rename({suffix: ".min"}))
         .pipe(sourceMaps.write("./"))
-        .pipe(gulp.dest("./public/assets/css"));
+        .pipe(gulp.dest("./public/assets/css"))
+        .pipe(browserSync.stream());
+}
+
+function serve() {
+    browserSync.init({
+        server: "./public"
+    });
+
+    gulp.watch("./source/scss/**/*.scss", gulp.series(lintSass, compileSass, compileCss))
 }
 
 gulp.task("compile-css",
     gulp.series(lintSass, compileSass, compileCss)
 );
+
+gulp.task("serve", gulp.series(lintSass, compileSass, compileCss, serve));

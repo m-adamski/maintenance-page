@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+    display: flex;
+    min-height: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    @include font-josefin;
+    color: $color-container;
+    background-color: $color-container-bg;
+}
+
+.wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: $var-screen-xlg;
+    padding: 40px;
+}
