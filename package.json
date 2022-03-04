@@ -1,24 +1,28 @@
 {
     "name": "maintenance-page",
-    "version": "1.0.0",
     "description": "Clean and simple maintenance page",
-    "main": "public/index.html",
     "repository": "https://github.com/m-adamski/maintenance-page.git",
     "author": "Maciej Adamski <m.adamski@ideacode.pl>",
     "license": "MIT",
-    "private": false,
     "scripts": {
-        "compile-css": "gulp compile-css",
-        "serve": "gulp serve"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "next": "12.1.0",
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
     },
     "devDependencies": {
-        "browser-sync": "^2.26.7",
-        "gulp": "^4.0.2",
-        "gulp-clean-css": "^4.2.0",
-        "gulp-rename": "^1.4.0",
-        "gulp-sass": "^4.0.2",
-        "gulp-sass-lint": "^1.4.0",
-        "gulp-sourcemaps": "^2.6.5",
-        "sass-lint": "^1.13.1"
+        "@types/node": "17.0.21",
+        "@types/react": "17.0.39",
+        "autoprefixer": "^10.4.2",
+        "eslint": "8.10.0",
+        "eslint-config-next": "12.1.0",
+        "postcss": "^8.4.7",
+        "tailwindcss": "^3.0.23",
+        "typescript": "4.6.2"
     }
 }
