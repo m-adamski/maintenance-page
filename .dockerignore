@@ -5,4 +5,5 @@
 Dockerfile
 .dockerignore
 
+ghrc.txt
 README.md

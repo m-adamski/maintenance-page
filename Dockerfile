@@ -44,11 +44,14 @@ RUN addgroup --system --gid 1001 nextjs && \
 # Switch workdir to project directory
 WORKDIR /home/node/app
 
-# Copy files from BuildImage
+# Copy base files from BuildImage
 COPY --from=BuildImage --chown=nextjs:nextjs /home/node/app/package.json /home/node/app/yarn.lock ./
 COPY --from=BuildImage --chown=nextjs:nextjs /home/node/app/node_modules ./node_modules
-COPY --from=BuildImage --chown=nextjs:nextjs /home/node/app/public ./public
-COPY --from=BuildImage --chown=nextjs:nextjs /home/node/app/.next ./.next
 COPY --from=BuildImage --chown=nextjs:nextjs /home/node/app/next.config.js ./
+COPY --from=BuildImage --chown=nextjs:nextjs /home/node/app/.next ./.next
+
+# Copy project files from BuildImage
+COPY --from=BuildImage --chown=nextjs:nextjs /home/node/app/locales ./locales
+COPY --from=BuildImage --chown=nextjs:nextjs /home/node/app/public ./public
 
 CMD ["yarn", "start"]
